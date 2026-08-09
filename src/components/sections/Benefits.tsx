@@ -1,41 +1,21 @@
 import { Container } from '../ui/Container'
 
 const BENEFITS = [
-  {
-    title: 'Выглядеть дорого за один визит',
-    text: 'Стрижка, борода и финальная форма собираются в цельный образ, который считывается сразу и без доработок дома.',
-  },
-  {
-    title: 'Чёткий результат, а не лотерея',
-    text: 'Чистые переходы, аккуратный контур и понятная форма. Вы приходите за своим стилем и получаете именно его.',
-  },
-  {
-    title: 'Запись без ожидания и суеты',
-    text: 'Онлайн запись работает прямо на сайте: выбрали услугу, мастера и время без лишних звонков и бесконечных переносов.',
-  },
-  {
-    title: 'Место, куда возвращаются',
-    text: 'Оценка 5 из 5, сильная команда и спокойный сервис. К нам приходят не на один раз, а за стабильным уровнем.',
-  },
+  { title: 'Начинаем с вас', text: 'Внимательно выслушаем, проведём осмотр и простыми словами объясним, что поможет именно в вашей ситуации.' },
+  { title: 'Бережно и без спешки', text: 'Создаём спокойную атмосферу, отвечаем на вопросы и заботимся о вашем комфорте на каждом этапе.' },
+  { title: 'План, которому легко доверять', text: 'До начала лечения вы будете понимать последовательность шагов, сроки и возможные варианты решения.' },
+  { title: 'Записаться просто', text: 'Оставьте контакты — администратор поможет выбрать удобное время и подходящего специалиста.' },
 ]
 
 export function Benefits() {
   return (
-    <section className="border-t border-white/10 bg-[var(--color-bg)] py-16 md:py-20">
+    <section className="bg-[var(--color-bg)] py-16 md:py-24">
       <Container>
-        <div className="grid gap-px overflow-hidden rounded-[24px] border border-white/10 bg-white/10 md:grid-cols-2 xl:grid-cols-4">
-          {BENEFITS.map((item, index) => (
-            <article
-              key={`${index}-${item.title}`}
-              className="group relative bg-[linear-gradient(180deg,rgba(28,27,23,0.96)_0%,rgba(16,12,11,0.98)_100%)] p-7 transition duration-300 lg:hover:bg-[linear-gradient(180deg,rgba(28,27,23,0.98)_0%,rgba(16,12,11,1)_100%)] md:min-h-[280px]"
-            >
-              <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[var(--color-accent)] transition-transform duration-300 lg:group-hover:scale-x-100" />
-              <h2 className="max-w-[14rem] text-[1.5rem] leading-tight text-white [font-family:var(--font-montserrat)] sm:text-[1.75rem]">
-                {item.title}
-              </h2>
-              <p className="mt-5 max-w-[16rem] text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
-                {item.text}
-              </p>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {BENEFITS.map((item) => (
+            <article key={item.title} className="min-h-[250px] rounded-[28px] border border-[var(--color-line)] bg-white p-7">
+              <h2 className="text-balance text-2xl font-semibold leading-[0.93] tracking-[-0.055em] text-[var(--color-heading)] [font-family:var(--font-display)] sm:font-medium sm:leading-[0.98]">{item.title}</h2>
+              <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">{item.text}</p>
             </article>
           ))}
         </div>

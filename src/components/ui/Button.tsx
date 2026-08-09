@@ -24,18 +24,18 @@ export function Button({
     <button
       {...props}
       className={cx(
-        'inline-flex items-center justify-center gap-2 rounded-none border font-semibold uppercase transition duration-200',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950',
+        'inline-flex items-center justify-center gap-2 rounded-md border font-semibold transition duration-300',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
         'disabled:cursor-not-allowed disabled:opacity-60',
-        size === 'xs' && 'px-3 py-1.5 text-[10px] tracking-[0.14em]',
+        size === 'xs' && 'px-4 py-2.5 text-xs',
         size === 'sm' && 'px-4 py-2 text-xs',
-        size === 'md' && 'px-5 py-3 text-sm tracking-[0.16em]',
+        size === 'md' && 'px-6 py-3.5 text-sm',
         variant === 'primary' &&
-          'border-[var(--color-accent)] bg-[var(--color-accent)] text-[#100C0B] shadow-[0_16px_40px_rgba(138,115,86,0.16)] lg:hover:border-[var(--color-accent-bright)] lg:hover:bg-[var(--color-accent-bright)]',
+          'border-[var(--color-accent)] bg-[var(--color-accent)] text-white shadow-[0_14px_32px_rgba(20,184,196,0.2)] hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-strong)]',
         variant === 'outline' &&
-          'border-white/14 bg-transparent text-zinc-100 lg:hover:border-[var(--color-accent)] lg:hover:text-[var(--color-accent-soft)]',
+          'border-[var(--color-line)] bg-white text-[var(--color-heading)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent-strong)]',
         variant === 'ghost' &&
-          'border-transparent bg-transparent text-zinc-100 lg:hover:text-[var(--color-accent-soft)]',
+          'border-transparent bg-transparent text-[var(--color-heading)] hover:text-[var(--color-accent-strong)]',
         className,
       )}
     >

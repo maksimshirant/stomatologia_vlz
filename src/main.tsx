@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './index.css'
 import App from './App'
+import { initializeYandexMetrika } from './api/yandexMetrika'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,6 +19,8 @@ const rootEl = document.getElementById('root')
 if (!rootEl) {
   throw new Error('Root element #root not found')
 }
+
+initializeYandexMetrika()
 
 createRoot(rootEl).render(
   <QueryClientProvider client={queryClient}>

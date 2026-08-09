@@ -1,99 +1,30 @@
+import { Button } from '../ui/Button'
 import { Container } from '../ui/Container'
 import type { HeaderNavItem } from './Header'
 
-export function Footer({
-  nav,
-  onOpenBooking,
-  onOpenPrivacy,
-}: {
-  nav: ReadonlyArray<HeaderNavItem>
-  onOpenBooking: () => void
-  onOpenPrivacy: () => void
-}) {
+export function Footer({ nav, onOpenBooking, onOpenPrivacy }: { nav: ReadonlyArray<HeaderNavItem>; onOpenBooking: () => void; onOpenPrivacy: () => void }) {
   return (
-    <footer className="border-t border-white/10 bg-transparent pb-24 md:pb-0">
+    <footer className="bg-[var(--color-heading)] text-white">
       <Container>
-        <div className="grid gap-10 py-12 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_0.9fr]">
+        <div className="grid gap-10 py-12 md:grid-cols-2 xl:grid-cols-[1.25fr_0.75fr_0.9fr] xl:py-16">
           <div>
-            <a href="#top" className="inline-flex items-center" aria-label="Barbershop VLG">
-              <img
-                src="/Logo.png"
-                alt="Barbershop VLG"
-                className="h-14 w-auto object-contain"
-              />
+            <a href="#top" className="inline-flex items-center gap-3" aria-label="Denta VLG">
+              <span className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-[var(--color-accent)] text-white"><svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true"><path d="M7.2 3.6c1.7 0 2.7.9 4.8.9s3.1-.9 4.8-.9c2.5 0 4.2 2 4.2 4.5 0 2.1-1 3.4-1.8 5.5-.9 2.3-1.1 6.8-3.6 6.8-1.8 0-1.4-4.7-3.6-4.7s-1.8 4.7-3.6 4.7c-2.5 0-2.7-4.5-3.6-6.8C4 11.5 3 10.2 3 8.1c0-2.5 1.7-4.5 4.2-4.5Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" /></svg></span>
+              <span className="text-2xl font-bold">Бетка</span>
             </a>
-            <div className="mt-3 text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
-              Тут что нибудь крутое напишите
-            </div>
+            <p className="mt-5 max-w-md text-sm leading-7 text-cyan-50/65">Начните с консультации: врач поможет понять ситуацию и выбрать комфортный путь к здоровой улыбке.</p>
+            <Button type="button" onClick={onOpenBooking} className="mt-7">Получить консультацию</Button>
           </div>
-
-          <div>
-            <div className="text-[11px] font-extralight uppercase tracking-[0.24em] text-[var(--color-accent-soft)] [font-family:var(--font-body)]">
-              Навигация
-            </div>
-            <div className="mt-5 grid gap-3">
-              {nav.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-xs font-extralight uppercase tracking-[0.18em] text-zinc-300 transition [font-family:var(--font-body)] lg:hover:text-[var(--color-accent-soft)]"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <div className="text-[11px] font-extralight uppercase tracking-[0.24em] text-[var(--color-accent-soft)] [font-family:var(--font-body)]">
-              Быстрые ссылки
-            </div>
-            <div className="mt-5 grid gap-3 text-sm font-extralight text-zinc-300 [font-family:var(--font-body)]">
-              <button
-                type="button"
-                onClick={onOpenBooking}
-                className="text-left transition lg:hover:text-[var(--color-accent-soft)]"
-              >
-                Записаться онлайн
-              </button>
-              <a className="transition lg:hover:text-[var(--color-accent-soft)]" href="tel:+79964899008">
-                +7 (996) 489-90-08
-              </a>
-              <a className="transition lg:hover:text-[var(--color-accent-soft)]" href="mailto:example@example.ru">
-                example@example.ru
-              </a>
-              <a
-                className="transition lg:hover:text-[var(--color-accent-soft)]"
-                href="#contact"
-                aria-label="Telegram"
-                title="Telegram"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M21 4L3.9 10.58C2.73 11.05 2.74 11.7 3.68 11.98L8.07 13.35L18.23 6.94C18.71 6.65 19.15 6.81 18.79 7.13L10.56 14.56V19.4C10.56 20.1 10.88 20.37 11.26 20.37C11.64 20.37 11.81 20.2 12.02 19.91L14.15 16.94L18.58 20.2C19.39 20.64 19.97 20.41 20.18 19.42L23.09 5.72C23.4 4.5 22.61 3.95 21 4Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
+          <div><div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-light)]">Узнайте больше</div><div className="mt-5 grid gap-3">{nav.map((item) => <a key={item.href} href={item.href} className="text-sm text-cyan-50/70 transition hover:text-white">{item.label}</a>)}</div></div>
+          <div><div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-light)]">На связи с вами</div><div className="mt-5 grid gap-3 text-sm text-cyan-50/70"><a href="tel:+79000000000" className="transition hover:text-white">+7 (900) 000-00-00</a><a href="mailto:example@example.ru" className="transition hover:text-white">example@example.ru</a><span>Волгоград, Аллея Героев</span><span>Каждый день, 10:00–21:00</span></div></div>
         </div>
-
-        <div className="flex flex-col gap-3 border-t border-white/10 py-6 text-xs font-extralight text-zinc-500 [font-family:var(--font-body)] md:flex-row md:items-center md:justify-between">
-          <div>© {new Date().getFullYear()} Barbershop VLG. Все права защищены.</div>
-          <button
-            type="button"
-            onClick={onOpenPrivacy}
-            className="text-left uppercase tracking-[0.18em] transition lg:hover:text-[var(--color-accent-soft)] md:text-right"
-          >
-            Политика конфиденциальности
-          </button>
+        <div className="flex flex-col gap-3 border-t border-white/10 py-6 text-xs text-cyan-50/45 [&>button]:hidden md:flex-row md:items-center md:justify-between">
+          <div>© {new Date().getFullYear()} Бетка. Забота о вашей улыбке.</div>
+          <button type="button" onClick={onOpenPrivacy} className="text-left uppercase tracking-[0.14em] transition hover:text-white">Конфиденциальность данных</button>
+          <div className="flex flex-col gap-2 text-left uppercase tracking-[0.14em] md:flex-row md:gap-5">
+            <button type="button" onClick={onOpenPrivacy} className="transition hover:text-white">Согласие на обработку персональных данных</button>
+            <button type="button" onClick={onOpenPrivacy} className="transition hover:text-white">Политика обработки персональных данных</button>
+          </div>
         </div>
       </Container>
     </footer>

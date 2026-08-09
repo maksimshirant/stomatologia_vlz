@@ -6,13 +6,15 @@ function cx(...parts: Array<string | false | null | undefined>) {
 
 export function Modal({
   open,
-  eyebrow = 'Запись',
+  eyebrow = 'Консультация',
   title,
   description,
   children,
   panelClassName,
   contentClassName,
   contentScrollable = true,
+  eyebrowHighlight,
+  showEyebrowGraphic = true,
   onClose,
 }: {
   open: boolean
@@ -23,6 +25,8 @@ export function Modal({
   panelClassName?: string
   contentClassName?: string
   contentScrollable?: boolean
+  eyebrowHighlight?: string
+  showEyebrowGraphic?: boolean
   onClose: () => void
 }) {
   const handleClose = useEffectEvent(() => {
@@ -52,7 +56,7 @@ export function Modal({
 
   return (
     <div
-      className="fixed inset-0 z-50"
+      className="fixed inset-0 z-[80]"
       role="dialog"
       aria-modal="true"
       aria-label={title}
@@ -60,37 +64,37 @@ export function Modal({
       <button
         type="button"
         onClick={onClose}
-        className="absolute inset-0 bg-[rgba(16,12,11,0.68)] backdrop-blur-xl"
-        aria-label="Закрыть"
+        className="absolute inset-0 bg-[rgba(15,55,64,0.34)] backdrop-blur-md"
+        aria-label="Закрыть окно"
       />
-      <div className="relative mx-auto flex min-h-full w-full items-end px-3 py-3 sm:items-center sm:px-6 sm:py-10">
+      <div className="relative mx-auto flex min-h-full w-full items-end sm:items-center sm:px-6 sm:py-10">
         <div
           className={cx(
-            'mx-auto flex max-h-[calc(100vh-1.5rem)] w-full max-w-2xl flex-col overflow-hidden rounded-none border border-white/10 bg-[linear-gradient(180deg,rgba(28,27,23,0.96)_0%,rgba(16,12,11,0.98)_100%)] shadow-[0_40px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:max-h-[calc(100vh-5rem)]',
+            'mx-auto flex h-[100dvh] w-full max-w-xl flex-col overflow-hidden bg-white shadow-[0_40px_120px_rgba(15,55,64,0.24)] sm:h-auto sm:max-h-[calc(100vh-5rem)] sm:rounded-[24px] sm:border sm:border-white',
             panelClassName,
           )}
         >
-          <div className="border-b border-white/10 px-6 py-5 sm:px-7">
-            <div className="flex items-start justify-between gap-6">
-              <div>
-                <div className="text-4xl leading-none tracking-[0.06em] text-[var(--color-accent-soft)] [font-family:var(--font-hero)] sm:text-5xl">
-                  {eyebrow}
-                </div>
-                <div className="mt-4 text-sm font-extralight leading-7 text-zinc-300 [font-family:var(--font-body)]">
-                  {title}
-                </div>
+          <div className="px-5 py-4 sm:px-6">
+            <div className="flex items-center justify-between gap-4">
+              <div className="text-3xl leading-none text-[var(--color-heading)] [font-family:var(--font-display)] sm:text-4xl">
+                {eyebrow ? (
+                  <>
+                    <span className="text-[var(--color-accent-strong)]">{eyebrowHighlight ?? eyebrow.split(' ')[0]}</span>{eyebrow.slice((eyebrowHighlight ?? eyebrow.split(' ')[0]).length)}
+                    {showEyebrowGraphic ? <svg viewBox="0 0 36 36" fill="none" className="ml-2 inline-block h-[0.65em] w-[0.65em] align-baseline text-[var(--color-accent-strong)]" aria-hidden="true"><path d="M10.5 5.5c3.1 0 3.9 1.7 7.5 1.7s4.4-1.7 7.5-1.7c4.1 0 6.9 3.3 6.9 7.3 0 3.4-1.7 5.5-2.9 8.5-1.5 3.8-1.8 9.5-5.5 9.5-2.7 0-1.8-6.6-6-6.6s-3.3 6.6-6 6.6c-3.7 0-4-5.7-5.5-9.5-1.2-3-2.9-5.1-2.9-8.5 0-4 2.8-7.3 6.9-7.3Z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" /></svg> : null}
+                  </>
+                ) : eyebrow}
               </div>
               <button
                 type="button"
                 onClick={onClose}
-                className="inline-flex h-16 w-16 items-center justify-center text-zinc-300 transition lg:hover:text-[var(--color-accent-soft)]"
+                className="inline-flex h-9 w-9 shrink-0 items-center justify-center text-[var(--color-heading)] transition hover:text-[var(--color-accent-strong)]"
                 aria-label="Закрыть окно"
               >
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-9 w-9"
+                  className="h-7 w-7"
                   aria-hidden="true"
                 >
                   <path
@@ -106,7 +110,7 @@ export function Modal({
           <div
             className={cx(
               contentScrollable && 'overflow-y-auto',
-              'px-6 py-6 sm:px-7 sm:py-7',
+              'px-5 py-5 sm:px-6 sm:py-6',
               contentClassName,
             )}
           >
