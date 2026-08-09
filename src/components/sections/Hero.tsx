@@ -1,4 +1,5 @@
 import { Button } from '../ui/Button'
+import { assetUrl } from '../../lib/assetUrl'
 import { Container } from '../ui/Container'
 
 const HERO_FACTS = [
@@ -11,10 +12,10 @@ export function Hero({ onPrimaryCta }: { onPrimaryCta: () => void }) {
   return (
     <section id="top" className="relative -mt-[73px] overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-accent-pale)]">
       <div className="absolute inset-0">
-        <img src="/dental/hero.png" alt="Пациентка в комфортной стоматологической клинике" fetchPriority="high" className="hidden h-full w-full object-cover object-[68%_center] sm:object-center md:block" />
+        <img src={assetUrl('dental/hero.png')} alt="Пациентка в комфортной стоматологической клинике" fetchPriority="high" className="hidden h-full w-full object-cover object-[68%_center] sm:object-center md:block" />
       </div>
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden md:hidden">
-        <img src="/фон на мобилку бирюзовый.png" alt="" fetchPriority="high" className="h-full w-full object-cover" />
+        <img src={assetUrl('фон на мобилку бирюзовый.png')} alt="" fetchPriority="high" className="h-full w-full object-cover" />
       </div>
 
       <Container>

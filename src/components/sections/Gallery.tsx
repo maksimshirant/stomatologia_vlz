@@ -1,3 +1,4 @@
+import { assetUrl } from '../../lib/assetUrl'
 import { Container } from '../ui/Container'
 
 const GALLERY = [
@@ -19,7 +20,7 @@ export function Gallery({ id }: { id: string }) {
           {GALLERY.map((item) => (
             <article key={item.title} className="relative flex h-full flex-col overflow-hidden rounded-[30px] bg-white">
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={item.image} alt={item.title} loading="lazy" className="h-full w-full object-cover" />
+                <img src={assetUrl(item.image)} alt={item.title} loading="lazy" className="h-full w-full object-cover" />
               </div>
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,31,35,0.08)_15%,rgba(4,31,35,0.74)_100%)] md:hidden" />
               <div className="absolute inset-x-0 bottom-0 p-6 text-white md:static md:p-7 md:text-inherit">

@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { assetUrl } from '../../lib/assetUrl'
 import { Button } from '../ui/Button'
 import { Container } from '../ui/Container'
 
@@ -57,7 +58,7 @@ export function Barbers({ id, onBook }: { id: string; onBook: (doctor: string) =
           {DOCTORS.map((doctor) => (
             <article key={doctor.name} className="group min-w-full snap-start overflow-hidden rounded-[28px] border border-[var(--color-line)] bg-white shadow-[0_18px_45px_rgba(27,91,105,0.07)] md:min-w-0">
               <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-accent-pale)]">
-                <img src={doctor.image} alt={`${doctor.name}, ${doctor.role}`} loading="lazy" className="h-full w-full object-cover" />
+                <img src={assetUrl(doctor.image)} alt={`${doctor.name}, ${doctor.role}`} loading="lazy" className="h-full w-full object-cover" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-5 pb-5 pt-16 text-white">
                   <div className="text-2xl [font-family:var(--font-display)]">{doctor.name}</div>
                   <div className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/75">{doctor.role}</div>

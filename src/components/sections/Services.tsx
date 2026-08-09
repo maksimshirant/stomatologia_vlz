@@ -1,4 +1,5 @@
 import { Button } from '../ui/Button'
+import { assetUrl } from '../../lib/assetUrl'
 import { Container } from '../ui/Container'
 
 type Service = {
@@ -31,7 +32,7 @@ export function Services({ id, onPickService }: { id: string; onPickService: (se
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {SERVICES.map((service, index) => (
-            <article key={service.title} style={{ backgroundImage: `linear-gradient(110deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 52%, rgba(255,255,255,0.36) 100%), url(${SERVICE_IMAGES[index]})` }} className="flex min-h-[340px] flex-col overflow-hidden rounded-[28px] border border-[var(--color-line)] bg-[var(--color-accent-pale)] bg-cover bg-center p-7 sm:p-9">
+            <article key={service.title} style={{ backgroundImage: `linear-gradient(110deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 52%, rgba(255,255,255,0.36) 100%), url(${assetUrl(SERVICE_IMAGES[index])})` }} className="flex min-h-[340px] flex-col overflow-hidden rounded-[28px] border border-[var(--color-line)] bg-[var(--color-accent-pale)] bg-cover bg-center p-7 sm:p-9">
               <h3 className="text-balance text-3xl font-semibold leading-[0.93] tracking-[-0.055em] text-[var(--color-heading)] [font-family:var(--font-display)] sm:text-4xl sm:font-medium sm:leading-[0.98]">{service.title}</h3>
               <p className="mt-5 max-w-xl text-sm leading-7 text-[var(--color-muted)]">{service.desc}</p>
               <ul className="mt-7 grid gap-3">
