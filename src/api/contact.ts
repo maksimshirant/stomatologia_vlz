@@ -13,6 +13,9 @@ export type BookingPayload = {
 export type BookingResult = { ok: true }
 
 const RU_PHONE_REGEX = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/
+const CONTACT_API_URL = (
+  import.meta.env.VITE_CONTACT_FORM_ENDPOINT ?? import.meta.env.VITE_CONTACT_API_URL
+)?.trim()
 
 // Приводит ввод пользователя к единому формату российского номера.
 export const formatRussianPhone = (raw: string) => {
@@ -36,13 +39,32 @@ export const formatRussianPhone = (raw: string) => {
 export const isValidRussianPhone = (phone: string) => RU_PHONE_REGEX.test(phone)
 
 // Имитирует отправку обращения до подключения реального API клиники.
-export async function fakeSendBooking(payload: BookingPayload): Promise<BookingResult> {
-  await new Promise((r) => setTimeout(r, 900))
+// Отправляет заявку в публичную HTTP-функцию Yandex Cloud.
+export async function sendBooking(payload: BookingPayload): Promise<BookingResult> {
 
   if (!payload.name.trim()) throw new Error('Укажите, как к вам обращаться')
 
   if (!isValidRussianPhone(payload.phone)) {
     throw new Error('Проверьте номер телефона для связи')
+  }
+
+  if (!CONTACT_API_URL) {
+    throw new Error('Форма временно недоступна')
+  }
+
+  let response: Response
+  try {
+    response = await fetch(CONTACT_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+  } catch {
+    throw new Error('Не удалось отправить заявку. Попробуйте ещё раз.')
+  }
+
+  if (!response.ok) {
+    throw new Error('Не удалось отправить заявку. Попробуйте ещё раз.')
   }
 
   return { ok: true }

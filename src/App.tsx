@@ -26,7 +26,7 @@ export default function App() {
   const [bookingOpen, setBookingOpen] = useState(false)
   const [privacyOpen, setPrivacyOpen] = useState(false)
   const [consentOpen, setConsentOpen] = useState(false)
-  const [cookiesAccepted, setCookiesAccepted] = useState(() => window.localStorage.getItem('barbershop-cookie-consent') === 'accepted')
+  const [cookiesAccepted, setCookiesAccepted] = useState(() => window.localStorage.getItem('stomatologia_vlz-cookie-consent') === 'accepted')
   const [preset, setPreset] = useState<BookingModalPreset | null>(null)
   const [servicesBackdropOpacity, setServicesBackdropOpacity] = useState(0)
   const servicesStageRef = useRef<HTMLDivElement | null>(null)
@@ -132,7 +132,7 @@ export default function App() {
               <button
                 type="button"
                 onClick={() => {
-                  window.localStorage.setItem('barbershop-cookie-consent', 'accepted')
+                  window.localStorage.setItem('stomatologia_vlz-cookie-consent', 'accepted')
                   setCookiesAccepted(true)
                 }}
                 className="inline-flex min-h-12 items-center justify-center rounded-[16px] bg-[var(--color-accent-strong)] px-5 text-sm font-semibold text-white transition hover:bg-[var(--color-heading)]"

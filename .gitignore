@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Local environment files and project-only agent instructions
+.env
+.env.*
+!.env.example
+AGENTS.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
