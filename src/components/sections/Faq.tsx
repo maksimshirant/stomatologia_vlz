@@ -13,16 +13,16 @@ export function Faq() {
   const [active, setActive] = useState<number | null>(null)
 
   return (
-    <section className="border-y border-[var(--color-line)] bg-[var(--color-accent-pale)] py-16 md:py-24">
+    <section className="border-t border-[var(--color-line)] bg-[var(--color-accent-pale)] py-16 md:py-24">
       <Container>
-        <div className="border-b border-[var(--color-line)] pb-10">
+        <div className="pb-10">
           <h2 className="section-heading text-balance text-4xl font-semibold leading-[0.93] tracking-[-0.055em] text-[var(--color-heading)] [font-family:var(--font-display)] sm:text-5xl sm:font-medium sm:leading-[0.98]"><span className="text-[var(--color-accent-strong)]">Всё важное</span> перед визитом</h2>
         </div>
         <div className="mt-8 grid gap-3">
           {ITEMS.map((item, index) => {
             const open = index === active
             return (
-              <article key={item.question} className="overflow-hidden rounded-[22px] border border-[var(--color-line)] bg-white">
+              <article key={item.question} className="overflow-hidden rounded-[22px] border border-[var(--color-line)] bg-white transition duration-300 hover:-translate-y-0.5 hover:border-[var(--color-accent)]/45 hover:shadow-[0_12px_28px_rgba(18,52,61,0.08)]">
                 <button type="button" onClick={() => setActive(open ? null : index)} className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-7">
                   <span className="text-lg font-medium text-[var(--color-heading)] sm:text-xl">{item.question}</span>
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--color-accent-pale)] text-xl text-[var(--color-accent-strong)]">{open ? '−' : '+'}</span>

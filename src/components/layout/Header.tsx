@@ -84,7 +84,7 @@ export function Header({ nav, onOpenBooking }: { nav: ReadonlyArray<HeaderNavIte
               <Button type="button" size="xs" className="hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white" onClick={onOpenBooking}>Бесплатная консультация</Button>
             </div>
 
-            <button type="button" className="ml-auto hidden h-10 items-center justify-center rounded-md bg-[var(--color-accent)] px-4 text-xs font-semibold text-white shadow-[0_8px_22px_rgba(20,184,196,0.28)] transition duration-300 active:scale-[0.94] md:inline-flex min-[1166px]:!hidden" onClick={onOpenBooking}>Бесплатная консультация</button>
+            <button type="button" className="ml-auto hidden h-10 items-center justify-center rounded-md bg-[var(--color-accent)] px-4 text-xs font-semibold text-white shadow-[0_8px_22px_rgba(20,184,196,0.28)] transition duration-300 hover:bg-[var(--color-accent-strong)] active:scale-[0.94] md:inline-flex min-[1166px]:!hidden" onClick={onOpenBooking}>Бесплатная консультация</button>
             <a href="tel:+7900000000" aria-label="Позвонить в клинику Бетку" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[var(--color-accent)] text-white shadow-[0_8px_22px_rgba(20,184,196,0.28)] transition duration-300 active:scale-[0.94] min-[1166px]:hidden">
               <svg viewBox="0 0 24 24" className="h-[18px] w-[18px] text-white" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2c1.1.3 2.3.5 3.5.5a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.3 21 3 13.7 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.6 3.5a1 1 0 0 1-.3 1l-2.2 2.3Z" fill="currentColor" /></svg>
             </a>

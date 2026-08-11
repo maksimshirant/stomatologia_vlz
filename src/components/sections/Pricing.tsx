@@ -159,13 +159,13 @@ export function Pricing({ id, onOpenConsent, onOpenPrivacy }: { id: string; onOp
   return (
     <section id={id} className="border-y border-[var(--color-line)] bg-[var(--color-accent-pale)] py-16 md:py-24">
       <Container>
-        <div className="border-b border-[var(--color-line)] pb-10">
+        <div className="pb-10">
           <h2 className="section-heading text-balance text-4xl font-semibold leading-[0.93] tracking-[-0.055em] text-[var(--color-heading)] [font-family:var(--font-display)] sm:text-5xl sm:font-medium sm:leading-[0.98]">
             <span className="text-[var(--color-accent-strong)]">Подберём</span> решение для вашей улыбки
           </h2>
         </div>
 
-        <div className={`relative mt-10 overflow-hidden rounded-[28px] border border-white bg-[linear-gradient(135deg,#ffffff_0%,#f6fcfc_62%,#e2f3f4_100%)] shadow-[0_24px_70px_rgba(27,91,105,0.1)] transition-[min-height] duration-500 ease-out ${contactStep || mutation.isSuccess ? 'min-h-[390px]' : 'min-h-[590px] sm:min-h-[510px]'}`}>
+        <div className={`relative mt-10 overflow-hidden rounded-[28px] border border-white bg-[linear-gradient(135deg,#ffffff_0%,#f6fcfc_62%,#e2f3f4_100%)] shadow-[0_12px_28px_rgba(27,91,105,0.12),0_28px_72px_rgba(27,91,105,0.18)] transition-[min-height] duration-500 ease-out ${contactStep || mutation.isSuccess ? 'min-h-[390px]' : 'min-h-[590px] sm:min-h-[510px]'}`}>
           <div className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-[var(--color-accent)]/10" />
           <div className="pointer-events-none absolute -bottom-28 right-16 h-64 w-64 rounded-full border-[44px] border-[var(--color-accent)]/10" />
           <div className="pointer-events-none absolute left-[42%] top-12 h-20 w-20 rotate-45 rounded-[22px] border border-[var(--color-accent)]/15" />

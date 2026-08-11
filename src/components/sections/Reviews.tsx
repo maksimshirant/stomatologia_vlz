@@ -37,7 +37,7 @@ export function Reviews({
   return (
     <section id={id} className="bg-[var(--color-bg)] py-10 md:py-16">
       <Container>
-        <div className="relative overflow-hidden rounded-[32px] border border-white/70 bg-white/65 shadow-[0_22px_60px_rgba(14,137,149,0.14)] backdrop-blur-sm">
+        <div className="relative overflow-hidden rounded-[32px] border border-white/70 bg-white/65 shadow-[0_12px_28px_rgba(14,137,149,0.13),0_28px_72px_rgba(14,137,149,0.2)] backdrop-blur-sm">
           <div aria-hidden="true" className="absolute inset-y-0 right-0 w-full bg-[radial-gradient(circle_at_78%_50%,rgba(24,187,199,0.2),rgba(24,187,199,0.05)_28%,transparent_56%)] sm:w-3/5" />
           <div aria-hidden="true" className="absolute -right-24 -top-40 h-[470px] w-[470px] rounded-full border border-[var(--color-accent)]/15" />
           <div aria-hidden="true" className="absolute -right-3 -top-16 h-[330px] w-[330px] rounded-full border border-[var(--color-accent)]/20" />

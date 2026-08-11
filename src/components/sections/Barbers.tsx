@@ -47,7 +47,7 @@ export function Barbers({ id, onBook }: { id: string; onBook: (doctor: string) =
   return (
     <section id={id} className="bg-[var(--color-bg)] py-16 md:py-24">
       <Container>
-        <div className="border-b border-[var(--color-line)] pb-10">
+        <div className="pb-10">
           <h2 className="section-heading text-balance text-4xl font-semibold leading-[0.93] tracking-[-0.055em] text-[var(--color-heading)] [font-family:var(--font-display)] sm:text-5xl sm:font-medium sm:leading-[0.98]">Специалисты, которым доверяют <span className="text-[var(--color-accent-strong)]">улыбку</span></h2>
         </div>
       </Container>
