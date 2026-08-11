@@ -22,10 +22,10 @@ export function Gallery({ id }: { id: string }) {
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={assetUrl(item.image)} alt={item.title} loading="lazy" className="h-full w-full object-cover" />
               </div>
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,31,35,0.08)_15%,rgba(4,31,35,0.74)_100%)] md:hidden" />
-              <div className="absolute inset-x-0 bottom-0 p-6 text-white md:static md:p-7 md:text-inherit">
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(255,255,255,0.9)_100%)] md:hidden" />
+              <div className="absolute inset-x-3 bottom-3 rounded-2xl bg-white/90 p-5 text-[var(--color-heading)] shadow-[0_10px_30px_rgba(22,67,75,0.1)] backdrop-blur-sm md:static md:rounded-none md:bg-transparent md:p-7 md:shadow-none md:backdrop-blur-none">
                 <h3 className="text-balance text-2xl font-semibold leading-[0.93] tracking-[-0.055em] [font-family:var(--font-display)] sm:font-medium sm:leading-[0.98] md:text-[var(--color-heading)]">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-white/85 md:text-[var(--color-muted)]">{item.text}</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">{item.text}</p>
               </div>
             </article>
           ))}

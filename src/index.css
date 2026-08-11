@@ -16,16 +16,18 @@
 }
 
 :root {
-  --color-bg: #edf4f4;
-  --color-surface: #e7f0f1;
-  --color-text: #253d44;
-  --color-heading: #12343d;
-  --color-muted: #62777d;
-  --color-accent: #18bbc7;
-  --color-accent-strong: #0e8995;
-  --color-accent-light: #9cebf0;
-  --color-accent-pale: #e5f2f3;
-  --color-line: rgba(18, 74, 84, 0.13);
+  --color-bg: #f6fbfb;
+  --color-surface: #ffffff;
+  --color-text: #567278;
+  --color-heading: #47666d;
+  --color-muted: #71888d;
+  --color-accent: 
+#5ae0e8
+;
+  --color-accent-strong: #4fcad1;
+  --color-accent-light: #5ae0e8;
+  --color-accent-pale: #f1fbfb;
+  --color-line: rgba(22, 67, 75, 0.13);
   --font-display: "Montserrat", "Manrope Local", system-ui, sans-serif;
   --font-hero: var(--font-display);
   --font-montserrat: var(--font-display);
@@ -67,6 +69,52 @@ body {
     radial-gradient(800px circle at 12% 8%, rgba(24, 187, 199, 0.12), transparent 42%),
     linear-gradient(180deg, rgba(237, 249, 251, 0.96), rgba(255, 255, 255, 0.98));
   opacity: 0;
+}
+
+.footer-light .text-cyan-50\/65,
+.footer-light .text-cyan-50\/70,
+.footer-light .text-cyan-50\/45 {
+  color: var(--color-muted);
+}
+
+.footer-light .hover\:text-white:hover {
+  color: var(--color-accent-strong);
+}
+
+.footer-light .border-white\/10 {
+  border-color: var(--color-line);
+}
+
+.footer-light a[aria-label] > span {
+  color: var(--color-heading);
+}
+
+.footer-light a[aria-label] > span:first-child {
+  color: white;
+}
+
+.footer-light a[aria-label] > span:first-child {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.footer-light a[aria-label] > span:last-child {
+  font-size: 1.25rem;
+}
+
+.footer-light a[aria-label] > span:last-child::after {
+  content: "тут логотип";
+  display: block;
+  color: var(--color-muted);
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.footer-light .text-xs.font-semibold.uppercase {
+  color: var(--color-accent-strong);
 }
 
 * {

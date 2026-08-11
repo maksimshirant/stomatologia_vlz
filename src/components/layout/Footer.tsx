@@ -4,7 +4,7 @@ import type { HeaderNavItem } from './Header'
 
 export function Footer({ nav, onOpenBooking, onOpenPrivacy }: { nav: ReadonlyArray<HeaderNavItem>; onOpenBooking: () => void; onOpenPrivacy: () => void }) {
   return (
-    <footer className="bg-[var(--color-heading)] text-white">
+    <footer className="footer-light border-t border-[var(--color-line)] bg-[var(--color-surface)] text-[var(--color-text)]">
       <Container>
         <div className="grid gap-10 py-12 md:grid-cols-2 xl:grid-cols-[1.25fr_0.75fr_0.9fr] xl:py-16">
           <div>

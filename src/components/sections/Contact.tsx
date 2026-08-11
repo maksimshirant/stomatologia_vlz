@@ -2,15 +2,14 @@ import { Container } from '../ui/Container'
 
 export function Contact({ id }: { id: string }) {
   return (
-    <section id={id} className="bg-[var(--color-bg)] py-16 md:py-24">
+    <section id={id} className="bg-[var(--color-surface)] py-16 md:py-24">
       <Container>
-        <div className="text-center">
-          <div className="mx-auto mb-6 h-1 w-24 bg-[var(--color-accent)]" />
+        <div>
           <h2 className="section-heading text-balance text-4xl font-semibold leading-[0.93] tracking-[-0.055em] text-[var(--color-heading)] [font-family:var(--font-display)] sm:text-5xl sm:font-medium sm:leading-[0.98]"><span className="text-[var(--color-accent-strong)]">Сделайте шаг</span> к здоровой улыбке</h2>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3 md:gap-5">
-          <article className="min-h-44 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(18,52,61,0.06)] sm:p-7">
+          <article className="min-h-44 rounded-2xl border border-[var(--color-line)] bg-white p-6 shadow-[0_18px_45px_rgba(18,52,61,0.06)] sm:p-7">
             <div className="flex items-center gap-3 text-[var(--color-accent-strong)]">
               <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.8">
                 <path d="M7 3H4.5A1.5 1.5 0 0 0 3 4.5C3 13.6 10.4 21 19.5 21a1.5 1.5 0 0 0 1.5-1.5V17l-5-1-1.4 2.1a15.7 15.7 0 0 1-8.7-8.7L8 8 7 3Z" strokeLinecap="round" strokeLinejoin="round" />
@@ -21,7 +20,7 @@ export function Contact({ id }: { id: string }) {
             <div className="mt-2 text-sm text-[var(--color-muted)]">Подберём время и ответим на вопросы</div>
           </article>
 
-          <article className="min-h-44 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(18,52,61,0.06)] sm:p-7">
+          <article className="min-h-44 rounded-2xl border border-[var(--color-line)] bg-white p-6 shadow-[0_18px_45px_rgba(18,52,61,0.06)] sm:p-7">
             <div className="flex items-center gap-3 text-[var(--color-accent-strong)]">
               <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.8">
                 <circle cx="12" cy="12" r="9" />
@@ -33,7 +32,7 @@ export function Contact({ id }: { id: string }) {
             <div className="mt-1 text-base text-[var(--color-muted)]">10:00–21:00</div>
           </article>
 
-          <article className="min-h-44 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(18,52,61,0.06)] sm:p-7">
+          <article className="min-h-44 rounded-2xl border border-[var(--color-line)] bg-white p-6 shadow-[0_18px_45px_rgba(18,52,61,0.06)] sm:p-7">
             <div className="flex items-center gap-3 text-[var(--color-accent-strong)]">
               <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.8">
                 <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" strokeLinecap="round" strokeLinejoin="round" />
