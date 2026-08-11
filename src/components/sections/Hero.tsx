@@ -16,6 +16,7 @@ export function Hero({ onPrimaryCta }: { onPrimaryCta: () => void }) {
       </div>
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden md:hidden">
         <img src={assetUrl('фон на мобилку бирюзовый.png')} alt="" fetchPriority="high" className="h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(255,255,255,0.72)_45%,rgba(255,255,255,0.18)_100%)]" />
       </div>
 
       <Container>
